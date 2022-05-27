@@ -1,21 +1,20 @@
-import './main.css'
+//import './main.css'
 
 function Calendar(props) {
         
     return (
-        console.log(props.date)
-        /*<div className="ui-datepicker">
+        <div className="ui-datepicker">
           <div className="ui-datepicker-material-header">
-            <div className="ui-datepicker-material-day">{props.date.month}</div>
+            <div className="ui-datepicker-material-day">{props.date.format("dddd")}</div>
             <div className="ui-datepicker-material-date">
-              <div className="ui-datepicker-material-day-num">8</div>
-              <div className="ui-datepicker-material-month">Марта</div>
-              <div className="ui-datepicker-material-year">2017</div>
+              <div className="ui-datepicker-material-day-num">{props.date.format("DD")}</div>
+              <div className="ui-datepicker-material-month">{props.date.format("MMMM")}</div>
+              <div className="ui-datepicker-material-year">{props.date.format("YYYY")}</div>
             </div>
           </div>
           <div className="ui-datepicker-header">
             <div className="ui-datepicker-title">
-              <span className="ui-datepicker-month">Март</span>&nbsp;<span className="ui-datepicker-year">2017</span>
+              <span className="ui-datepicker-month">{props.date.format("MMMM")}</span>&nbsp;<span className="ui-datepicker-year">{props.date.format("YYYY")}</span>
             </div>
           </div>
           <table className="ui-datepicker-calendar">
@@ -58,9 +57,36 @@ function Calendar(props) {
                 <td>11</td>
                 <td>12</td>
               </tr>
+              <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td className="ui-datepicker-other-month">1</td>
+                <td className="ui-datepicker-other-month">2</td>
+              </tr>
             </tbody>
           </table>
-        </div>*/
+        </div>
     );
 }
 

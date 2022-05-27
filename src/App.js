@@ -6,8 +6,8 @@ import moment from 'moment';
 import 'moment/locale/ru';
 
 function App() {
-  const now = moment().toObject();
-  
+  const now = moment("03-08-2017").locale('ru');
+  //.format("dddd, MMMM, DD, YYYY, HH:mm:ss")
   const item = {
     brand: 'Tiger of Sweden',
     title: 'Leonard coat',
@@ -18,13 +18,31 @@ function App() {
   }
   
   return (
-    <div className="container">
-      <div className="background-element">
-      </div>
+    // func-component
+    /*<div className="container">
+      <div className="background-element"></div>
       <div className="highlight-window">
-       <div className='highlight-overlay'></div>
+        <div className='highlight-overlay'></div>
       </div>
       <div className="window">
+        <ShopItemFunc item={item} />
+      </div>
+    </div>
+    */
+    // class-component
+    /*<div className="container">
+      <div className="background-element"></div>
+      <div className="highlight-window">
+        <div className='highlight-overlay'></div>
+      </div>
+      <div className="window">
+        <ShopItemClass item={item} />
+      </div>
+    </div>
+    */
+
+    /* # calendar*/
+    <div className="container">
       <Calendar date={now} />
     </div>
   );
