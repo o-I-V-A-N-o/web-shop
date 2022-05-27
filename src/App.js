@@ -24,21 +24,10 @@ function App() {
       <div className="highlight-window">
        <div className='highlight-overlay'></div>
       </div>
-      
       <div className="window">
-       <Calendar date={now} />
-      </div>
+      <Calendar date={now} />
     </div>
   );
 }
 
 export default App;
-
-/*
-<div className="window">
-       <ShopItemFunc item={item} />
-      </div>
-      <div className="window">
-       <ShopItemClass item={item} />
-      </div>
-      */
