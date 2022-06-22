@@ -6,8 +6,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 
 function App() {
-  const now = moment("03-08-2017").locale('ru');
-  //.format("dddd, MMMM, DD, YYYY, HH:mm:ss")
+  const now = moment();
   const item = {
     brand: 'Tiger of Sweden',
     title: 'Leonard coat',
@@ -40,8 +39,7 @@ function App() {
       </div>
     </div>
     */
-
-    /* # calendar*/
+    // calendar
     <div className="container">
       <Calendar date={now} />
     </div>

@@ -1,8 +1,39 @@
-//import './main.css'
+import React, { useState } from 'react';
+import moment from 'moment';
+import 'moment/locale/ru';
+
 
 function Calendar(props) {
-        
+  var current = props.date
+  var start = moment().startOf("month").month(props.date.format("M")-1).startOf("isoWeek").subtract(1, 'days')
+  var end = moment().endOf("month").month(props.date.format("M")-1).isoWeekday(7)
+  var date = moment().startOf("month").month(props.date.format("M")-1).startOf("isoWeek").subtract(1, 'days')
+  
+  const daysInWeek= [1, 2, 3, 4, 5, 6, 7]
+  const countWeek= [1, 2, 3, 4, 5]
+  
+  var newDate = new Array
+  var currentNewDate = new Array
+  
+  var i = 0, key_gen = 0
+  var getDate
+
+  while (start.isBefore(end)) {
+    getDate = start.add(1, 'days')
+    newDate[i] = getDate.format("DD")
+    if (getDate.format("M") != current.format("M")) {
+      currentNewDate[i] = 'ui-datepicker-other-month'
+    } else {
+      currentNewDate[i] = ''
+    }
+    console.log(newDate[i], ' - ', currentNewDate[i])
+    i++
+  }
+  i = 0
+  console.log(i++)
+  console.log("--")
     return (
+      <>
         <div className="ui-datepicker">
           <div className="ui-datepicker-material-header">
             <div className="ui-datepicker-material-day">{props.date.format("dddd")}</div>
@@ -39,54 +70,17 @@ function Calendar(props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="ui-datepicker-other-month">27</td>
-                <td className="ui-datepicker-other-month">28</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>7</td>
-                <td className="ui-datepicker-today">8</td>
-                <td>9</td>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td>16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-              </tr>
-              <tr>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-              </tr>
-              <tr>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-                <td>30</td>
-                <td>31</td>
-                <td className="ui-datepicker-other-month">1</td>
-                <td className="ui-datepicker-other-month">2</td>
-              </tr>
+              {countWeek.map(value =>
+                <tr key={key_gen++}>
+                  {daysInWeek.map(value_2 =>
+                    <td key={key_gen++} className={currentNewDate[i]}>{newDate[i++]}</td>
+                  )}
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
+      </>
     );
 }
 

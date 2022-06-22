@@ -570,7 +570,8 @@ button:hover {
   color: white;
 }
 .ui-datepicker-calendar thead th {
-  color: #999999;
+  color: #4d457e;
+  border-bottom: 2px solid rgb(42, 37, 53);
   font-weight: 200;
   height: 33px;
   width: 33px;
