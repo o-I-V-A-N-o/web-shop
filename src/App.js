@@ -6,7 +6,7 @@ import moment from 'moment';
 import 'moment/locale/ru';
 
 function App() {
-  const now = moment();
+  const now = moment("2022-08-17");// Формат даты для проверки "YYYY-MM-DD"
   const item = {
     brand: 'Tiger of Sweden',
     title: 'Leonard coat',
@@ -17,7 +17,7 @@ function App() {
   }
   
   return (
-    // func-component
+    //------- func-component -------//
     /*<div className="container">
       <div className="background-element"></div>
       <div className="highlight-window">
@@ -28,7 +28,7 @@ function App() {
       </div>
     </div>
     */
-    // class-component
+    //------- class-component -------//
     /*<div className="container">
       <div className="background-element"></div>
       <div className="highlight-window">
@@ -39,7 +39,7 @@ function App() {
       </div>
     </div>
     */
-    // calendar
+    //------- calendar -------//
     <div className="container">
       <Calendar date={now} />
     </div>
